@@ -1,12 +1,14 @@
 package com.zhuravishkin.courses.concurrency;
 
-import com.zhuravishkin.demo.concurrency.counter.CorrectCounter;
-import com.zhuravishkin.demo.concurrency.counter.SimpleCounter;
+import com.zhuravishkin.courses.demo.concurrency.counter.CorrectCounter;
+import com.zhuravishkin.courses.demo.concurrency.counter.SimpleCounter;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.CountDownLatch;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Slf4j
 class SimpleCounterTest {
