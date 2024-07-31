@@ -1,0 +1,4 @@
+WARN  LoggerSLF4JTest:28 - Warn
+ERROR LoggerSLF4JTest:29 - Error
+WARN  LoggerSLF4JTest:28 - Warn
+ERROR LoggerSLF4JTest:29 - Error

@@ -1,0 +1,12 @@
+{
+  "name": "John",
+  "age": 30,
+  "address": {
+    "city": "New York",
+    "zip": "10001"
+  },
+  "phoneNumbers": [
+    "123-456-7890",
+    "987-654-3210"
+  ]
+}
