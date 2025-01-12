@@ -1,5 +1,6 @@
 package com.zhuravishkin.courses.algorithms;
 
+import com.zhuravishkin.courses.algorithms.interview.LongestUniqueSubarray;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

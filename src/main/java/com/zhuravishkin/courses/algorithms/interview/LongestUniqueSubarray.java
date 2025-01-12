@@ -1,4 +1,4 @@
-package com.zhuravishkin.courses.algorithms;
+package com.zhuravishkin.courses.algorithms.interview;
 
 /*
 Дан массив целых чисел, необходимо найти длину максимального непрерывного подмассива без повторяющихся элементов

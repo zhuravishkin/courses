@@ -1,4 +1,4 @@
-package com.zhuravishkin.courses.algorithms;
+package com.zhuravishkin.courses.algorithms.interview;
 
 /*
 Найти самую длинную подстроку из единиц

@@ -1,4 +1,4 @@
-package com.zhuravishkin.courses.algorithms;
+package com.zhuravishkin.courses.algorithms.interview;
 
 public class GenerateParentheses {
     public static void main(String[] args) {

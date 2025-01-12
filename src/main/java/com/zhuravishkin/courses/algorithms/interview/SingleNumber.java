@@ -1,4 +1,4 @@
-package com.zhuravishkin.courses.algorithms;
+package com.zhuravishkin.courses.algorithms.interview;
 
 /*
 lc136 - найти число без дублей

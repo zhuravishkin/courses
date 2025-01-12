@@ -1,4 +1,4 @@
-package com.zhuravishkin.courses.algorithms.sorting;
+package com.zhuravishkin.courses.algorithms.search;
 
 public class BinarySearchExample {
     public static void main(String[] args) {
@@ -18,7 +18,8 @@ public class BinarySearchExample {
         int high = sortedArray.length - 1;
 
         while (low <= high) {
-            int mid = (low + high) / 2;
+//            int mid = (low + high) / 2;
+            int mid = low + (high - low) / 2; // помогает избежать переполнения (overflow), которое может произойти при работе с большими значениями индексов
 
             if (sortedArray[mid] < key) {
                 low = mid + 1;
