@@ -16,7 +16,7 @@ public class QuickSort {
             return;
         }
 
-        int pivot = array[(left + right) / 2];
+        int pivot = array[left + (right - left) / 2];
         int leftMarker = left;
         int rightMarker = right;
 
@@ -36,47 +36,50 @@ public class QuickSort {
                 rightMarker--;
             }
             System.out.println(Arrays.toString(array));
+        }
 
-            if (left < rightMarker) {
-                quickSort(array, left, rightMarker);
-            }
-            if (right > leftMarker) {
-                quickSort(array, leftMarker, right);
-            }
+        if (left < rightMarker) {
+            quickSort(array, left, rightMarker);
+        }
+        if (leftMarker < right) {
+            quickSort(array, leftMarker, right);
         }
     }
 
 //    public static void quickSort(int[] array, int low, int high) {
 //        if (low < high) {
-//            int pi = partition(array, low, high);
+//            // Разделяем массив и получаем индекс опорного элемента (pivot)
+//            int pivotIndex = partition(array, low, high);
 //
-//            // Рекурсивно сортируем элементы до и после разделителя
-//            quickSort(array, low, pi - 1);
-//            quickSort(array, pi + 1, high);
+//            // Рекурсивно сортируем левую часть
+//            quickSort(array, low, pivotIndex - 1);
+//
+//            // Рекурсивно сортируем правую часть
+//            quickSort(array, pivotIndex + 1, high);
 //        }
 //    }
 //
-//    public static int partition(int[] array, int low, int high) {
-//        int pivot = array[high]; // выбираем последний элемент как опорный
-//        int i = (low - 1); // индекс меньшего элемента
+//    private static int partition(int[] array, int low, int high) {
+//        int pivot = array[high]; // Опорный элемент выбирается как последний
+//        int i = low - 1; // Индекс для элементов меньше опорного
 //
 //        for (int j = low; j < high; j++) {
-//            // Если текущий элемент меньше или равен опорному
 //            if (array[j] <= pivot) {
 //                i++;
-//
-//                // Меняем местами array[i] и array[j]
-//                int temp = array[i];
-//                array[i] = array[j];
-//                array[j] = temp;
+//                // Меняем местами элементы
+//                swap(array, i, j);
 //            }
 //        }
 //
-//        // Меняем местами array[i + 1] и array[high] (или опорный элемент)
-//        int temp = array[i + 1];
-//        array[i + 1] = array[high];
-//        array[high] = temp;
+//        // Перемещаем опорный элемент на его правильное место
+//        swap(array, i + 1, high);
 //
-//        return i + 1;
+//        return i + 1; // Возвращаем индекс опорного элемента
+//    }
+//
+//    private static void swap(int[] array, int i, int j) {
+//        int temp = array[i];
+//        array[i] = array[j];
+//        array[j] = temp;
 //    }
 }

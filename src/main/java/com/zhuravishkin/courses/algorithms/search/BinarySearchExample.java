@@ -4,7 +4,8 @@ public class BinarySearchExample {
     public static void main(String[] args) {
         int[] sortedArray = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
         int key = 7;
-        int result = binarySearch(sortedArray, key);
+//        int result = binarySearch(sortedArray, key);
+        int result = binarySearchRecursive(sortedArray, key);
 
         if (result == -1) {
             System.out.println("Элемент не найден.");
@@ -31,5 +32,28 @@ public class BinarySearchExample {
         }
 
         return -1; // элемент не найден
+    }
+
+    public static int binarySearchRecursive(int[] array, int target) {
+        int low = 0;
+        int high = array.length - 1;
+
+        return rec(array, target, low, high);
+    }
+
+    public static int rec(int[] array, int target, int left, int right) {
+        if (left > right) {
+            return -1;
+        }
+
+        int mid = left + (right - left) / 2;
+
+        if (array[mid] < target) {
+            return rec(array, target, mid + 1, right);
+        } else if (array[mid] > target) {
+            return rec(array, target, left, mid - 1);
+        } else {
+            return mid;
+        }
     }
 }

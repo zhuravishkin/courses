@@ -23,7 +23,7 @@ public class PrototypeDemo {
         rectangle.setWidth(20);
         rectangle.setHeight(30);
         rectangle.setColor("Blue");
-        rectangle.addMetadata("Created for a demo");
+        rectangle.addMetadata("Created by Alexey");
         registry.registerShape("Rectangle", rectangle);
 
         // Используем прототипы

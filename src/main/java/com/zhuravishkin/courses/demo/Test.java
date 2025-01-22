@@ -2,15 +2,19 @@ package com.zhuravishkin.courses.demo;
 
 import lombok.Data;
 
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 @Data
 public class Test {
-    private String name;
-    Object object;
-    List<String> list;
-
     public static void main(String[] args) {
+        String name;
+        Object object;
+        List<String> list = new LinkedList<>();
+        Map<String, String> map = new HashMap<>();
+
 //        Object[] objects = new String[2];
 //        objects[0] = "test";
 ////        objects[1] = 1;
