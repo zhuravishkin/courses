@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * 349. Intersection of Two Arrays
  * Найти пересечение двух отсортированных массивов ИЛИ, другими словами, для двух отсортированных массивов найти все элементы, которые встречаются в обоих массивах
  */
 public class L349Sort {
