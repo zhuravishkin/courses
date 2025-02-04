@@ -5,10 +5,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 349. Intersection of Two Arrays
+ * 349. Intersection of Two Arrays (sort)
  * Найти пересечение двух отсортированных массивов ИЛИ, другими словами, для двух отсортированных массивов найти все элементы, которые встречаются в обоих массивах
  */
-public class L349Sort {
+public class IntersectionOfTwoArraysSort {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(intersection(new int[]{1, 2, 2, 4}, new int[]{-2, 2})));
     }

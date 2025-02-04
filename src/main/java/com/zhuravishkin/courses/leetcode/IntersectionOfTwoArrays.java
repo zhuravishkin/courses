@@ -5,10 +5,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * 349. Intersection of Two Arrays
  * Given two integer arrays nums1 and nums2, return an array of their intersection.
  * Each element in the result must be unique and you may return the result in any order
  */
-public class L349 {
+public class IntersectionOfTwoArrays {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(intersection(new int[]{1, 2, 2, 1}, new int[]{2, 2})));
     }

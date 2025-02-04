@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 977. Squares of a Sorted Array
  * Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order
  */
-public class L977 {
+public class SquaresOfASortedArray {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(sortedSquares(new int[]{-4, -1, 0, 3, 10})));
     }
