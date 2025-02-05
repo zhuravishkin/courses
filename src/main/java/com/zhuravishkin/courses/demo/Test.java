@@ -13,6 +13,13 @@ public class Test {
         String name;
         Object object;
         List<String> list = new LinkedList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        List<String> list2 = list;
+        list2.remove("b");
+        System.out.println(list);
+        System.out.println(list2);
         Map<String, String> map = new HashMap<>();
 
 //        Object[] objects = new String[2];
