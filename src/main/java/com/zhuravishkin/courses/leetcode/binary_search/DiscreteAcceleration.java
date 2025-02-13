@@ -68,10 +68,6 @@ public class DiscreteAcceleration {
                     leftPosition = flag;
                     leftTime -= timeToFlag;
                     leftSpeed++;
-                } else {
-                    leftPosition += leftTime * leftSpeed;
-                    leftTime = 0;
-                    break;
                 }
             }
             leftPosition += leftTime * leftSpeed;
@@ -88,10 +84,6 @@ public class DiscreteAcceleration {
                     rightPosition = flag;
                     rightTime -= timeToFlag;
                     rightSpeed++;
-                } else {
-                    rightPosition -= rightTime * rightSpeed;
-                    rightTime = 0;
-                    break;
                 }
             }
             rightPosition -= rightTime * rightSpeed;
