@@ -51,36 +51,58 @@ package com.zhuravishkin.courses.leetcode.binary_search;
  */
 public class DiscreteAcceleration {
     public static double run(int l, int[] a) {
-        int left = 0;
-        int right = l;
-        while (right - left > 1) {
-            int time = (left + right) / 2;
-            int leftDistance = 0;
-            int leftSpeed = 1;
-            for (int i = 0; i < time; i++) {
-                for (int k : a) {
-                    if (i == k) {
-                        leftSpeed++;
-                    }
+        double left = 0;
+        double right = l;
+        double eps = 1e-7;
+        while (right - left > eps) {
+            double mid = (left + right) / 2;
+
+            double leftPosition = 0;
+            double leftSpeed = 1;
+            double leftTime = mid;
+            for (int flag : a) {
+                double distanceToFlag = flag - leftPosition;
+                double timeToFlag = distanceToFlag / leftSpeed;
+
+                if (timeToFlag <= leftTime) {
+                    leftPosition = flag;
+                    leftTime -= timeToFlag;
+                    leftSpeed++;
+                } else {
+                    leftPosition += leftTime * leftSpeed;
+                    leftTime = 0;
+                    break;
                 }
-                leftDistance += leftSpeed;
             }
-            int rightDistance = l;
-            int rightSpeed = 1;
-            for (int i = l; i > (l - time); i--) {
-                for (int k : a) {
-                    if (i == k) {
-                        rightSpeed++;
-                    }
+            leftPosition += leftTime * leftSpeed;
+
+            double rightPosition = l;
+            double rightSpeed = 1;
+            double rightTime = mid;
+            for (int i = a.length - 1; i >= 0; i--) {
+                int flag = a[i];
+                double distanceToFlag = rightPosition - flag;
+                double timeToFlag = distanceToFlag / rightSpeed;
+
+                if (timeToFlag <= rightTime) {
+                    rightPosition = flag;
+                    rightTime -= timeToFlag;
+                    rightSpeed++;
+                } else {
+                    rightPosition -= rightTime * rightSpeed;
+                    rightTime = 0;
+                    break;
                 }
-                rightDistance -= rightSpeed;
             }
-            if (leftDistance >= rightDistance) {
-                right = time;
+            rightPosition -= rightTime * rightSpeed;
+
+            if (leftPosition >= rightPosition) {
+                right = mid;
             } else {
-                left = time;
+                left = mid;
             }
         }
+
         return (left + right) / 2.0;
     }
 }
