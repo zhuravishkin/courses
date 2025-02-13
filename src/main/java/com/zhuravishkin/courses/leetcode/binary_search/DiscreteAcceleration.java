@@ -53,13 +53,11 @@ public class DiscreteAcceleration {
     public static double run(int l, int[] a) {
         int left = 0;
         int right = l;
-        int low = left;
-        int high = right;
-        while (high - low > 1) {
-            int mid = (low + high) / 2;
-            int leftDistance = left;
+        while (right - left > 1) {
+            int time = (left + right) / 2;
+            int leftDistance = 0;
             int leftSpeed = 1;
-            for (int i = 0; i < mid; i++) {
+            for (int i = 0; i < time; i++) {
                 for (int k : a) {
                     if (i == k) {
                         leftSpeed++;
@@ -67,22 +65,22 @@ public class DiscreteAcceleration {
                 }
                 leftDistance += leftSpeed;
             }
-            int rightDistance = left;
+            int rightDistance = l;
             int rightSpeed = 1;
-            for (int i = right; i > (right - mid); i--) {
+            for (int i = l; i > (l - time); i--) {
                 for (int k : a) {
                     if (i == k) {
                         rightSpeed++;
                     }
                 }
-                rightDistance += rightSpeed;
+                rightDistance -= rightSpeed;
             }
-            if (leftDistance < right - Math.abs(rightDistance)) {
-                low = mid;
+            if (leftDistance >= rightDistance) {
+                right = time;
             } else {
-                high = mid;
+                left = time;
             }
         }
-        return (low + high) / 2.0;
+        return (left + right) / 2.0;
     }
 }
