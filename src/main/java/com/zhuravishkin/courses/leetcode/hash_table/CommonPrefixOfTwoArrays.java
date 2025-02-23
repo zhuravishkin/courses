@@ -16,7 +16,7 @@ import java.util.Map;
  * len(nums1) = len(nums2)
  * len(nums1), len(nums2) >= 1
  */
-public class CommonPrefixTwoArrays {
+public class CommonPrefixOfTwoArrays {
     public static List<Integer> findCommonPrefix(List<Integer> nums1, List<Integer> nums2) {
         List<Integer> result = new ArrayList<>(nums1.size());
         Map<Integer, Integer> map = new HashMap<>();
